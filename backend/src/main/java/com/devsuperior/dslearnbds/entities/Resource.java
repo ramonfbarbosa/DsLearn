@@ -33,8 +33,8 @@ public class Resource implements Serializable {
 	@JoinColumn(name = "offer_id")
 	private Offer offer;
 
-	@OneToMany(mappedBy = "resource")
-	private List<Section> sections = new ArrayList<>();
+	@OneToMany(mappedBy = "offer")
+	private List<Resource> resources = new ArrayList<>();
 	
 	public Resource() {
 	}
@@ -105,6 +105,10 @@ public class Resource implements Serializable {
 
 	public void setOffer(Offer offer) {
 		this.offer = offer;
+	}
+	
+	public List<Resource> getResources() {
+		return resources;
 	}
 
 	@Override
