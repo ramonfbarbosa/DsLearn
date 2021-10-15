@@ -20,7 +20,7 @@ public class NotificationService {
 	
 	@Autowired
 	private AuthService authService;
-	
+
 	@Transactional
 	public Page<NotificationDTO> notificationForCurrentUser(Pageable pageable){
 		User user = authService.authenticated();
